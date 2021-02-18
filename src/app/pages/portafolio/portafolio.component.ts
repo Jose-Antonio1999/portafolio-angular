@@ -9,29 +9,12 @@ import { ProductosService } from 'src/app/services/productos.service';
 })
 export class PortafolioComponent implements OnInit {
   
-  producto: Array<Producto> = new Array<Producto>();
-  cargando =  true
-
   constructor(public productoService:ProductosService) { 
-    this.obtenerProductos();
+
   }
 
   ngOnInit(): void {
   }
 
-  obtenerProductos(){
-
-    this.productoService.cargarProductos().subscribe(
-      (res)=>{
-        this.producto = res
-        this.cargando = false
-        console.log(this.producto)
-      },
-      (error)=>{
-        console.log(error)
-      }
-    )
-
-  }
 
 }
